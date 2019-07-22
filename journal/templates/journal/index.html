@@ -250,7 +250,7 @@
         var date = moment(new Date(2019,m,dayMonth)).startOf('day').format('YYYY-MM-DD');
         
         // check whether there is writing for that day in data. 
-        var pos = this.data.map(function(e) { return moment(e.createdAt).startOf('day').format('YYYY-MM-DD'); }).indexOf(date);
+        var pos = this.data.map(function(e) { return moment(e.fields.pub_date).startOf('day').format('YYYY-MM-DD'); }).indexOf(date);
         
         // if its later this month, no color. 
         if(date > this.date) {
@@ -301,10 +301,10 @@
         var d = e.target.dataset.day;
         var m = new Date().getMonth();
         var date = moment(new Date(new Date(2019,m,d))).startOf('day').format('YYYY-MM-DD');
-        var pos = this.data.map(function(e) { return moment(e.createdAt).startOf('day').format('YYYY-MM-DD') }).indexOf(date);
+        var pos = this.data.map(function(e) { return moment(e.fields.pub_date).startOf('day').format('YYYY-MM-DD') }).indexOf(date);
 
         // update textArea of date selected
-        this.text = this.data[pos].content;
+        this.text = this.data[pos].fields.content;
         // if not today's date, disable save & textArea
         if(date !== this.date) {
             this.isActive = pos

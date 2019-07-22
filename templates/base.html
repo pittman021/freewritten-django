@@ -4,6 +4,9 @@
 <head>
   <meta charset="utf-8">
   <title>{% block title %}Gardens{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Heebo:900|Roboto+Slab" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Open+Sans&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
@@ -15,11 +18,64 @@
   
   {% load static %}
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-  <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+  
 </head>
 <body>
   <div id="site">
-    <div id="navWrapper">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/write">
+            <img src="{% static 'images/notebook.png' %}">
+          </a>
+          <div class="navbar-burger burger" data-target="navMenu">
+              <span></span>
+              <span></span>
+              <span></span>
+        </div>
+      </div>
+    
+        <div class="navbar-menu" id="navMenu">
+          <div class="navbar-end">
+              {% if user.is_authenticated %}
+
+              <div class="navbar-item">
+                <a href="{% url 'logout' %}">Logout</a>
+              </div>
+ 
+             {% else %}
+                 <div class="navbar-item"><a href="{% url 'login' %}">Login</a></div>
+                 <div class="navbar-item"><a href="{% url 'register' %}">Signup</a></div>
+             {% endif %}
+                    <!-- <% if(user) { %>
+                      <div class="navbar-item">
+                        <a class="accent bold" href="/write">Write</a>
+                      </div>
+                      <div class="navbar-item">
+                        <a class="accent bold" href="/logout">Logout</a>
+                      </div>
+                    <% } %>
+                    <% if(user && user.stripe_customer_id) { %>
+                      <div class="navbar-item">
+                          <a class="accent bold" href="/user/<%= user.id %>/subscriptions">Subscription</a>
+                        </div>
+                      <% } %>
+                  <% if(!user) { %>
+                    <div class="navbar-item">
+                      <a class="accent" href="/login">Login</a>
+                    </div>
+                    <div class="navbar-item">
+                        <a class="accent bold" href="/plans">Plans</a>
+                      </div>
+                  <% } %> -->
+     
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+
+    <!-- <div id="navWrapper">
         <div class="nav" id="nav">
           <ul>
             {% if user.is_authenticated %}
@@ -32,7 +88,7 @@
             {% endif %}
           </div>
           </ul>
-        </div>
+        </div> -->
 
   <main id="main">
     {% if messages %}
@@ -45,5 +101,6 @@
     {% endblock %}
   </main>
 </div>
+<script type="text/javascript" src="{% static 'js/app.js' %}"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@ from journal import views
 from . import views
 
 urlpatterns = [
-    path('', views.write, name="note_list"),
+    path('', views.write, name="write"),
     path('note_list/', views.note_list, name="note_list"),
 
     # path('new/', views.contact_create, name="contact_new"),

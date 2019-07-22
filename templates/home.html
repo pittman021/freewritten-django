@@ -3,11 +3,69 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-{% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">logout</a></p>
-{% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a>
-{% endif %}
+
+</section>
+<section id="homepage-hero" class="hero is-fullheight-with-navbar has-text-centered">
+
+  
+    <div class="hero-head">
+      </div>
+      <div class="hero-body">
+        <div class="container">
+          <section class="section">
+            <div class="columns hero-ctas">
+              <!-- <div class="column is-3">
+                  <img id="hero-logo" src="/images/notebook.png" style="height:100px; width:100px">
+              </div> -->
+                <div class="column is-12" id="hero-cta-content">
+                  <h1 class="title" id="hero-title">Freewritten
+                    </h1>
+                  <!-- <h2 class="subtitle is-4">(Financial Independence, Retire Early)</h2> -->
+                <div id="hero-subtitle">
+                        <p class="subtitle font-accent">Build your daily freewriting habit.</p>
+                </div>
+                <br>
+    
+        <div class="get-started">
+          <a href="{% url 'register' %}" class="button">Get Started</a>
+        </div>
+        </div>
+      </div>
+      </section>
+      <hr>
+      <section class="section main content" id="howitworks">
+          <h2 class=" subtitle is-2">So what?</h2><br>
+                <p>
+                <strong>FREEWRITING</strong> has been used by artists, entrepreneurs, creatives throughout history was a way to unlock new ideas,
+                create new connectsion, clear their minds. It has been proven to deepen creativity & unlock writers block. With freewritten, you can 
+                strengthen this habit to help create new creativity in your life.
+                </p>
+          
+              <blockquote style="width:400px;">
+                  “SHOW UP, SHOW UP, SHOW UP, AND AFTER A WHILE THE MUSE SHOWS UP, TOO.” - ISABEL ALLENDE
+              </blockquote>
+        
+              <p>
+    
+            
+                <strong>Improve your Writing</strong>
+    
+                Freewriting makes writing easier. It's a vital part of the writing process. It can help you breakthrough powerful blocking feelings. 
+                Take the pressure away from 'being a writer' by letting go and writing without stopping. 
+                </p>
+    
+              </div>
+            </div>
+      </section>
+    </section>
+    <br>
+    <br>
+
+
+
+
 {% endblock %}
+
+
+
+  

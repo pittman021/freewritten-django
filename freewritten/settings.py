@@ -129,5 +129,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-LOGIN_REDIRECT_URL = 'note_list'
+LOGIN_REDIRECT_URL = 'write'
 LOGIN_URL = 'login'
