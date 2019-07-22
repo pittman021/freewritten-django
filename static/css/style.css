@@ -1,0 +1,200 @@
+html {
+    position:relative; 
+    min-height: 100%;
+    }
+    
+    html, body, textarea {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    font-size: 17px;
+    margin:0;
+    }     
+    
+    textarea {
+        min-height:200px;
+        max-height: 100%;
+        max-width:600px;
+        font-size:18px;
+        color:black;
+        width: 800px;
+        border: none;
+        resize:none;
+        outline:none;
+        overflow-y:hidden;
+        position:relative;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+    }
+    
+    textarea:disabled {
+        color: darkgrey;
+        background: white;
+    }
+  
+    footer {
+        background-color: #ffffff
+    }
+  
+    .title {
+        font-family: 'Heebo', sans-serif;
+        color: #4C5454
+    }
+  
+    .accent {
+      color: #4E5454
+    }
+  
+    .accent-2 {
+        color: #F53C52
+    }
+  
+  .auth-box {
+    width:400px;
+    height:400px;
+    margin: 0 auto;
+    text-align:center;
+    margin-top:10%;
+  }
+    
+    .row {
+        display: flex;
+      }
+      
+      .column {
+        flex: 50%;
+      }
+    
+    .main {
+    
+        margin: 0 auto;
+        width:600px;
+    }
+    
+    #header {
+        text-align:center;
+    }
+    
+    .success {
+        color:green;
+        font-weight:bold;
+    }
+    
+    #word-goal li {
+        display: inline;
+    }
+  
+    #hero-title {
+        font-size: 5em;
+    }
+  
+    #hero-subtitle {
+        margin-top: -20px;
+    }
+    
+    #word-goal ul {
+        padding: 0px;
+    }
+  
+    #todays-date {
+      margin-bottom: -2px;
+    }
+    
+    #month-dates {
+        width:800px;
+        margin:0 auto;
+        margin-bottom:25px;
+        text-align:center;
+    }
+    
+    .word-count {
+        width:150px;
+        float:left;
+    }
+    
+    .green {
+        color:green
+    }
+    
+    .text-small {
+        font-size: .75em;
+    }
+  
+    .save-status {
+      width:150px;
+      margin-top: 20px;
+    }
+      
+    .grey {
+        color:grey;
+    }
+    
+    .button-day {
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        margin-left: 5px;
+    }
+    
+    .active {
+        background: #E09843
+    }
+  
+    .inactive {
+        background: lightgray;
+    }
+  
+    .border {
+        border-color:black;
+    }
+  
+    .forgot-password {
+        text-align:right;
+    }
+  
+    .forgot-password a {
+        margin-right: 10px;
+    }
+  
+    .footer {
+      position: absolute;
+      padding-bottom: 2.5rem;
+      bottom: 0;
+      width: 100%;
+      background-color: #ffffff
+     }
+  
+     #writer-footer {
+      position: absolute;
+      bottom: 0;
+      padding-bottom: 2rem;
+      width:100%;
+      position: absolute;
+     }
+  
+     .error {
+         background-color: lightcoral;
+     }
+  
+     .info {
+         background-color: lightgoldenrodyellow;
+     }
+  
+     .flash-success {
+         background-color: lightgreen
+     }
+  
+     .hide { 
+         display: none;
+     }
+  
+     .landing-img {
+      box-shadow: 0 0 10px;
+     }
+  
+  
+    
+  
+  
+  
+  
+  
