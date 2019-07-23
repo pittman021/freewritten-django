@@ -153,10 +153,9 @@
     }
 
     render() {
-        console.log(this)
         const s = this.currentStreak > 1 ? 's' : ''
         this.textArea.value = this.text
-        this.count.innerText = this.getWordCount(this.text);
+        this.count.innerText = this.wordCount
         this.textArea.style.height = (this.textArea.scrollHeight) + 'px';
         window.scrollTo(0,document.body.scrollHeight);
         this.currentStreakEl.innerText = `Current Streak: ${this.currentStreak} day${s}`;
@@ -165,7 +164,6 @@
 
   
     setText(e) {
-        console.log(this);
         this.text = e.target.value;
         this.wordCount = this.getWordCount(e.target.value)
         if(e.keyCode === 32) {
@@ -174,6 +172,7 @@
             // Set timer that will save comment when it fires.
             this.timeoutId = setTimeout(this.saveDraftToStorage.bind(this), 3000);
         }
+        this.render()
     }
 
     saveDraftToStorage() {
