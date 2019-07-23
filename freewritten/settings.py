@@ -33,7 +33,7 @@ DATABASES = {
 }
 
 
-ALLOWED_HOSTS = ['127.0.0.1', 'https://young-cliffs-51172.herokuapp.com/']
+ALLOWED_HOSTS = ['127.0.0.1', 'young-cliffs-51172.herokuapp.com']
 
 
 # Application definition
