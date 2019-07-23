@@ -130,16 +130,16 @@
 
                 this.data.push(note);
                 this.isActive = this.data.length - 1
-                this.wordCount = this.getWordCount(this.text)
                 this.text = this.data[this.isActive].fields.content
+                this.wordCount = this.getWordCount(this.text)
                 this.buildButtonList();
                 this.render();
 
             } else {
             // if there is today's post. show it in textArea // 
             this.isActive = pos
-            this.wordCount = this.getWordCount(this.text)
             this.text = this.data[pos].fields.content
+            this.wordCount = this.getWordCount(this.text)
             this.buildButtonList();
             this.render();
          
