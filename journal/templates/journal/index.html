@@ -113,7 +113,6 @@
             this.todaysDate.innerHTML = moment().format('MMMM Do, YYYY');
 
             // loop through posts & check if it matches today
-            console.log(this.data);
             var pos = this.data.map(function(e) { return moment(e.fields.pub_date).startOf('day').format('YYYY-MM-DD'); }).indexOf(this.date);
 
             // if no post for today. tis a new day! 
@@ -131,6 +130,7 @@
 
                 this.data.push(note);
                 this.isActive = this.data.length - 1
+                this.wordCount = this.getWordCount(this.text)
                 this.text = this.data[this.isActive].fields.content
                 this.buildButtonList();
                 this.render();
@@ -138,6 +138,7 @@
             } else {
             // if there is today's post. show it in textArea // 
             this.isActive = pos
+            this.wordCount = this.getWordCount(this.text)
             this.text = this.data[pos].fields.content
             this.buildButtonList();
             this.render();
@@ -152,6 +153,7 @@
     }
 
     render() {
+        console.log(this)
         const s = this.currentStreak > 1 ? 's' : ''
         this.textArea.value = this.text
         this.count.innerText = this.getWordCount(this.text);
@@ -163,7 +165,9 @@
 
   
     setText(e) {
+        console.log(this);
         this.text = e.target.value;
+        this.wordCount = this.getWordCount(e.target.value)
         if(e.keyCode === 32) {
             if (this.timeoutId) clearTimeout(this.timeoutId);
         
@@ -183,20 +187,22 @@
         // check whether save var is true, which is set when date is today. cant save old posts // 
         if(this.save) {
 
-            var body = {
-                content: this.textArea.value,
-                word_count: this.getWordCount(this.text)
-            }
+
             // this checks whether this post was saved to DB or is new. brand new posts won't contain an 
             // updatedAt attribute.
             var post = this.data[this.isActive];
-            if(post.fields.pub_date === undefined) {
+            post.fields.content = this.text
+            post.fields.word_count = this.wordCount
+            if(post.model === undefined) {
+
+                console.log(post);
  
                 fetch("/write/note/new", {
                     method: 'POST', // or 'PUT'
-                    body: JSON.stringify(body),
+                    body: JSON.stringify(post),
                     headers: {
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
+                        "X-CSRFToken": token
                     } 
                   }).then(res => res.json())
                   .then(response => {
@@ -208,10 +214,12 @@
 
                   }).catch(error => console.error('Error:', error));
             } else {
+
+                console.log(post);
    
                 fetch(`/write/note/${post.pk}/edit`, {
                     method: 'PUT', // or 'PUT'
-                    body: JSON.stringify(body),
+                    body: JSON.stringify(post),
                     headers: {
                         "Content-Type": "application/json",
                         "X-CSRFToken": token
