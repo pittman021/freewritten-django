@@ -1,1 +1,1 @@
-web: gunicorn gardens.wsgi
+web: gunicorn freewritten.wsgi
