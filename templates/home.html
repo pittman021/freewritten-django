@@ -5,35 +5,37 @@
 {% block content %}
 
 </section>
-<section id="homepage-hero" class="hero is-fullheight-with-navbar has-text-centered">
+<section class="hero is-fullheight-with-navbar">
 
   
     <div class="hero-head">
       </div>
       <div class="hero-body">
         <div class="container">
-          <section class="section">
-            <div class="columns hero-ctas">
-              <!-- <div class="column is-3">
-                  <img id="hero-logo" src="/images/notebook.png" style="height:100px; width:100px">
-              </div> -->
-                <div class="column is-12" id="hero-cta-content">
+      
+            <div class="columns is-vcentered">
+          
+                <div class="column is-6" id="hero-cta-content">
                   <h1 class="title" id="hero-title">Freewritten
                     </h1>
                   <!-- <h2 class="subtitle is-4">(Financial Independence, Retire Early)</h2> -->
                 <div id="hero-subtitle">
                         <p class="subtitle font-accent">Build your daily freewriting habit.</p>
+                          <div class="get-started">
+                              <a href="{% url 'register' %}" class="button">Get Started</a>
+                            </div>
                 </div>
                 <br>
-    
-        <div class="get-started">
-          <a href="{% url 'register' %}" class="button">Get Started</a>
-        </div>
+              </div>
+              <div class="column is-6 box">
+              {% load static %}
+              <img src="{% static 'images/images_hero.gif' %}" alt="Hero Image">
+              </div>
+            </div>
         </div>
       </div>
-      </section>
-      <hr>
-      <section class="section main content" id="howitworks">
+      <!-- <hr> -->
+      <!-- <section class="section main content" id="howitworks">
           <h2 class=" subtitle is-2">So what?</h2><br>
                 <p>
                 <strong>FREEWRITING</strong> has been used by artists, entrepreneurs, creatives throughout history was a way to unlock new ideas,
@@ -57,7 +59,7 @@
               </div>
             </div>
       </section>
-    </section>
+    </section> -->
     <br>
     <br>
 

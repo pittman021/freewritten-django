@@ -3,7 +3,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>{% block title %}Gardens{% endblock %}</title>
+  <title>{% block title %}Freewritten{% endblock %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
   <link href="https://fonts.googleapis.com/css?family=Heebo:900|Roboto+Slab" rel="stylesheet">
@@ -45,7 +45,6 @@
  
              {% else %}
                  <div class="navbar-item"><a href="{% url 'login' %}">Login</a></div>
-                 <div class="navbar-item"><a href="{% url 'register' %}">Signup</a></div>
              {% endif %}
                     <!-- <% if(user) { %>
                       <div class="navbar-item">

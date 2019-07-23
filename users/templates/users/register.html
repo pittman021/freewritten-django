@@ -6,21 +6,21 @@
 
 <div id="auth">
         <div class="auth-box">
-
-<div class="content-section">
-    <form method="POST">
-        {% csrf_token %}
-        <fieldset>
-            {{ form|crispy }}
-        </fieldset>
-        <button type="submit">Signup</button>
-    </form>
-    <div>
-        Already have an account? <a href="{% url 'login' %}">Sign in</a>
-    </div>
-</div>
-
-</div>
-</div>
+            <div class="content-section">
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset>
+                        {{ form|crispy }}
+                    </fieldset>
+                    <br>
+                    <button class="button" type="submit">Signup</button>
+                </form>
+                <br>
+                <div>
+                    Already have an account? <a href="{% url 'login' %}">Sign in</a>
+                </div>
+            </div>
+        </div>
+</d iv>
 
 {% endblock content %}

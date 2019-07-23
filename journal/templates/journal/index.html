@@ -332,13 +332,13 @@
 var header = document.getElementById('header');
 
 
-var headerTimeout = setTimeout(removeHeader, 3000);
+var headerTimeout = setTimeout(removeHeader, 10000);
 
 header.addEventListener('mouseover', function() {
     $('#header').fadeTo('medium', 100);
     // reset timeout
     clearTimeout(headerTimeout);
-    headerTimeout = setTimeout(removeHeader, 3000);
+    headerTimeout = setTimeout(removeHeader, 10000);
 })
 
 function removeHeader() {

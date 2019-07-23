@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
     'crispy_forms',
-    'journal.apps.JournalConfig'
+    'journal.apps.JournalConfig',
+    'django_crispy_bulma',
 ]
 
 MIDDLEWARE = [
@@ -130,12 +131,32 @@ USE_L10N = True
 
 USE_TZ = True
 
+CRISPY_ALLOWED_TEMPLATE_PACKS = (
+    "bootstrap",
+    "uni_form",
+    "bootstrap3",
+    "bootstrap4",
+    "bulma",
+)
+
+
+CRISPY_TEMPLATE_PACK = "bulma"
+
+SENGRID_USERNAME = 'app105103958@heroku.com'
+SENDGRID_PASSWORD = 'k&4*!6bJHl0D'
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = SENGRID_USERNAME
+EMAIL_HOST_PASSWORD = SENDGRID_PASSWORD
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 LOGIN_REDIRECT_URL = 'write'
 LOGIN_URL = 'login'
+LOGOUT_REDIRECT_URL = '/'
 
 STATIC_ROOT = os.path.join(os.path.join(BASE_DIR), 'staticfiles')
 STATIC_URL = '/static/'

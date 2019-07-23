@@ -14,10 +14,12 @@
                                 <fieldset>
                                     {{ form|crispy }}
                                 </fieldset>
-                                <button type="submit">Login</button>
+                                <br>
+                                <button class="button" type="submit">Login</button>
                             </form>
+                            <br>
                             <div>
-                                Need an account? <a href="{% url 'register' %}">Sign up</a>
+                                <a href="{% url 'register' %}">Sign up</a> | <a href="{% url 'password_reset' %}">Reset Password</a>
                             </div>
                         </div>
                 

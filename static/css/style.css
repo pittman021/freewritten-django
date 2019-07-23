@@ -9,6 +9,12 @@ html {
     font-size: 17px;
     margin:0;
     }     
+
+    .box {
+        -webkit-box-shadow: 2px 1px 12px 3px rgba(150,150,150,1);
+-moz-box-shadow: 2px 1px 12px 3px rgba(150,150,150,1);
+box-shadow: 2px 1px 12px 3px rgba(150,150,150,1);
+    }
     
     textarea {
         min-height:200px;
@@ -52,7 +58,6 @@ html {
     width:400px;
     height:400px;
     margin: 0 auto;
-    text-align:center;
     margin-top:10%;
   }
     
