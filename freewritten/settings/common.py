@@ -16,24 +16,8 @@ import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'bvl&k)h88gzpyez4w+#jb)$(qj3&(v@4e0)0xz4t-mg1lzqjf2'
 
-DEBUG = True
-
-DATABASES = {
-     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'freewritten_development',
-        'USER': 'timpittman',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
-
-
-ALLOWED_HOSTS = ['127.0.0.1', 'https://young-cliffs-51172.herokuapp.com/']
+ALLOWED_HOSTS = []
 
 
 # Application definition
