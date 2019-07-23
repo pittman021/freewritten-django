@@ -121,15 +121,17 @@
 
                 // create a blank object for today's draft // 
                 var note = {
-                    content: 'this is my first post',
-                    word_count: 4,
+                    fields: {
+                    content: 'today is a new day!',
+                    word_count: 5,
                     pub_date: this.date
+                    }
 
                 }
 
                 this.data.push(note);
                 this.isActive = this.data.length - 1
-                this.text = this.data[this.isActive].content
+                this.text = this.data[this.isActive].fields.content
                 this.buildButtonList();
                 this.render();
 
